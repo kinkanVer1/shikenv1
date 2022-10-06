@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+div{ display:flex; justify-content: center; width:320px; margin:4px auto; gap:8px; }
+button{ width:100px; height:4em; background: #9ce; }
+#result{ width:190px; text-align: right; padding-right: 10px;}
+</style>
+</head>
+<body>
+<div>
+<input type="text" id="result" value="0">
+<button type="button" onclick="reset()">C</button>
+</div>
+<div>
+<button type="button" onclick="add(10)">☆<br>(星)</button>
+<button type="button" onclick="add(20)">◎<br>(丸)</button>
+<button type="button" onclick="add(30)">♡<br>(ハート)</button>
+</div>
+<div>
+<button type="button" onclick="add(40)">△<br>(三角)</button>
+<button type="button" onclick="add(50)">◇<br>(ひし形)</button>
+<button type="button" onclick="add(60)">□<br>(四角)</button>
+</div>
+<div>
+<button type="button" onclick="edit()">Ｘ<br>(失敗)</button>
+</div>
+<script>
+let vl = 0, nm;
+const result = document.getElementById("result");
+var chk = 0;
+
+function edit() {
+vl -= nm;
+result.value = vl;
+}
+
+function add(nn) {
+nm = nn;
+vl += nm;
+result.value = vl;
+}
+
+function reset() {
+vl = 0; result.value = vl;
+}
+</script>
+</body>
+</html>
